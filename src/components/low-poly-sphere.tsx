@@ -6,8 +6,7 @@ export function LowPolySphere() {
 			className="mx-auto flex aspect-square w-full max-w-[480px] items-center justify-center"
 			style={{ perspective: "1000px" }}
 		>
-			<div className="sphere-bob relative aspect-square w-full">
-				<div className="globe-core" />
+			<div className="sphere-bob aspect-square w-full">
 				<div className="globe-scene sphere-spin relative h-full w-full">
 					{MERIDIANS.map((deg) => (
 						<div
