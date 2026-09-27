@@ -12,6 +12,20 @@ export const metadata: Metadata = {
 	description: "Portfolio of Yash",
 };
 
+const PERSON_JSONLD = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Yash Parab",
+	jobTitle: "Software Developer",
+	description:
+		"Computer science student and software developer building web applications.",
+	sameAs: [
+		"https://github.com/yashparab17",
+		"https://www.linkedin.com/in/yash-parab-787b6a281/",
+	],
+	email: "mailto:yashparab1705@gmail.com",
+};
+
 const THEME_INIT_SCRIPT = `
 (function () {
   try {
@@ -31,6 +45,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 		>
 			<head>
 				<script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSONLD) }}
+				/>
 			</head>
 			<body className="min-h-full flex flex-col">{children}</body>
 		</html>
