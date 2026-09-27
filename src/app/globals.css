@@ -191,6 +191,34 @@ html[data-magicui-theme-vt="active"]::view-transition-new(root) {
 	transform-style: preserve-3d;
 }
 
+.globe-core {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 22%;
+	height: 22%;
+	border-radius: 9999px;
+	background: radial-gradient(
+		circle at 35% 35%,
+		color-mix(in oklch, var(--primary) 95%, white),
+		var(--primary) 55%,
+		transparent 100%
+	);
+	animation: core-glow 9s ease-in-out infinite;
+}
+
+@keyframes core-glow {
+	0%,
+	100% {
+		opacity: 0.35;
+		box-shadow: 0 0 10px 2px color-mix(in oklch, var(--primary) 55%, transparent);
+	}
+	50% {
+		opacity: 1;
+		box-shadow: 0 0 30px 10px color-mix(in oklch, var(--primary) 75%, transparent);
+	}
+}
+
 @keyframes sphere-bob {
 	0%,
 	100% {
@@ -221,7 +249,8 @@ html[data-magicui-theme-vt="active"]::view-transition-new(root) {
 
 @media (prefers-reduced-motion: reduce) {
 	.sphere-bob,
-	.sphere-spin {
+	.sphere-spin,
+	.globe-core {
 		animation: none;
 	}
 }
