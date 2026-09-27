@@ -24,9 +24,9 @@ export function About() {
 							{/* TODO: replace with your real bio */}i&apos;m a
 							computer science student who likes turning rough ideas
 							into software that actually holds up. most of my time
-							goes into backend systems and the small interface
-							details that make an app feel considered rather than
-							assembled
+							goes into the small interface details that make an app
+              feel considered rather than assembled - while keeping
+              it optimized
 						</p>
 					</div>
 				</Reveal>
