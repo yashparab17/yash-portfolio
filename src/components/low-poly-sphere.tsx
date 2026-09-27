@@ -1,4 +1,5 @@
 const MERIDIANS = [0, 30, 60, 90, 120, 150];
+const LATITUDES = [0, 30, 60, 90, 120, 150];
 
 export function LowPolySphere() {
 	return (
@@ -10,9 +11,16 @@ export function LowPolySphere() {
 				<div className="globe-scene sphere-spin relative h-full w-full">
 					{MERIDIANS.map((deg) => (
 						<div
-							key={deg}
+							key={`meridian-${deg}`}
 							className="globe-ring"
 							style={{ transform: `rotateY(${deg}deg)` }}
+						/>
+					))}
+					{LATITUDES.map((deg) => (
+						<div
+							key={`latitude-${deg}`}
+							className="globe-ring"
+							style={{ transform: `rotateX(${deg}deg)` }}
 						/>
 					))}
 				</div>
